@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="" content="">
+    <!--All CSS Links Star-->
+    <link rel="stylesheet" href="file:///sdcard/HTML/Font/fontawesome-free-5.14.0-web/css/all.css" type="text/css" media="all" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <!--All CSS Links End-->
+    
+    <style type="text/css" media="all">
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .heading {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        input {
+            outline: none;
+            border: none;
+        }
+        label {
+            font-size: 1.7rem;
+            margin-top: 20px;
+        }
+        .btn {
+            font-size: 1.5rem;
+        }
+        main {
+            height: auto;
+            width: 60%;
+            display: block;
+            margin: 20px auto;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        .form-control {
+            font-size: 2rem;
+        }
+        .nav-tabs{
+        }
+        .buttons {
+            height: auto;
+            width: 100%;
+            padding: 30px 0;
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-column-gap: 30px;
+        }
+        .result {
+            font-size: 1.2rem;
+        }
+    </style>
+    <title>BMI & BMR</title>
+</head>
+<body class="w3-red">
+    <header class="">
+        <h1 class="bg-dark mt-0 py-5 text-center text-white heading">Calculate Your BMI Or BMR</h1>
+    </header>
+
+    <main class="bg-white w3-text-black rounded">
+
+        <ul class="nav nav-tabs nav-pills" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="bmi-tab" data-toggle="tab" href="#bmi" role="tab" aria-controls="bmi" aria-selected="true"><h3>BMI</h3></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="bmr-tab" data-toggle="tab" href="#bmr" role="tab" aria-controls="bmr" aria-selected="false"><h3>BMR</h3></a>
+            </li>
+        </ul>
+        
+        <section class="tab-content" id="myTabContent">
+            <section class="tab-pane fade show active bmi" role="tabpanel" aria-labelledby="bmi-tab" id="bmi">
+                <h1 class="text-center py-3 bg-primary text-white rounded">Calculate BMI</h1>
+                <label for="bmiHeight">Enter your height : (inch)</label>
+                <input type="number" class="d-block form-control" name="bmiHeight" id="bmiHeight" value="" />
+                <label for="bmWeight">Enter your weight : (kg)</label>
+                <input type="number" class="d-block form-control" name="bmWeight" id="bmiWeight" value="" />
+                <div class="buttons">
+                    <button class="btn btn-success" type="submit" onclick="bmiCalculat(6)">Calculate</button>
+                    <button class="btn btn-danger" type="submit" onclick="reset()">Reset</button>
+                </div>
+            </section>
+            <section class="tab-pane fade" role="tabpanel" aria-labelledby="bmr-tab" id="bmr">
+                <h1 class="text-center py-3 bg-primary text-white rounded">Calculate BMR</h1>
+                <label for="bmrHeight">Enter your Height : (inch)</label>
+                <input type="number" name="bmrHeight" class="d-block form-control" id="bmrHeight" value="" />
+                <label for="bmrWeight">Enter your Weight : (kg)</label>
+                <input type="number" name="bmrWeight" class="d-block form-control" id="bmrWeight" value="" />
+                <label for="bmrAge">Enter you Age : </label>
+                <input type="number" class="d-block form-control" name="bmrAge" id="bmrAge" value="" />
+                <label for="bmrGender">Select Gender</label>
+                <select name="bmrGender" class="form-control" id="bmrGender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <div class="buttons">
+                    <button class="btn btn-success" type="submit" onclick="bmrCalculat()">Calculate</button>
+                    <button class="btn btn-danger" onclick="reset()">Reset</button>
+                </div>
+            </section>
+        </section>
+        <section class="d-block p-5 bg-success text-white result">
+            <output id="result"></output>
+            <output id="comment"></output>
+        </section>
+    </main>
+
+
+ <script src="file:///sdcard/HTML/Jquarry/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <script src="Bmi_bms.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
+
